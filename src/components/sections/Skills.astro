@@ -1,0 +1,115 @@
+---
+import Section from '../Section.astro'
+import HTML from '@/icons/html.astro'
+import CSS from '@/icons/css.astro'
+import JavaScript from '@/icons/javascript.astro'
+import TypeScript from '@/icons/type.astro'
+import React from '@/icons/react.astro'
+import Node from '@/icons/node.astro'
+import MySQL from '@/icons/sql.astro'
+import Git from '@/icons/git.astro'
+import GitHub from '@/icons/GitHub.astro'
+import Tailwindcss from '@/icons/tailwind.astro'
+import Next from '@/icons/next.astro'
+import { skills } from '@cv'
+import Swift from '@/icons/swift.astro'
+import SwiftUI from '@/icons/swiftui.astro'
+import Kotlin from '@/icons/kotlin.astro'
+import Flutter from '@/icons/flutter.astro'
+import Sass from '@/icons/sass.astro'
+import StyledComponents from '@/icons/styledComponents.astro'
+import Mui from '@/icons/mui.astro'
+import Jest from '@/icons/jest.astro'
+import Redux from '@/icons/redux.astro'
+import Expo from '@/icons/expo.astro'
+import Remix from '@/icons/remix.astro'
+
+const SKILLS_ICONS: Record<string, any> = {
+  HTML,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React,
+  Node,
+  MySQL,
+  Git,
+  GitHub,
+  Next,
+  Tailwindcss,
+  Swift,
+  SwiftUI,
+  Kotlin,
+  Flutter,
+  Sass,
+  StyledComponents,
+  Mui,
+  Jest,
+  Redux,
+  Expo,
+  Remix,
+}
+---
+
+<Section title="Skills">
+  <ul>
+    {
+      skills.map(({ name }) => {
+        const iconName =
+          name === 'Next.js'
+            ? 'Next'
+            : name === 'Styled Components'
+              ? 'StyledComponents'
+              : name === 'Material UI'
+                ? 'Mui'
+                : name === 'Redux toolkit'
+                  ? 'Redux'
+                  : name === 'React Native'
+                    ? 'Expo'
+                    : name
+        const Icon = SKILLS_ICONS[iconName as keyof typeof SKILLS_ICONS]
+
+        return (
+          <li>
+            {Icon && <Icon />} <span>{name}</span>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  @media print {
+    li {
+      align-items: center;
+      background: #eee;
+      border-radius: 6px;
+      color: black;
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 500;
+      gap: 4px;
+      padding: 0.2rem 0.6rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>

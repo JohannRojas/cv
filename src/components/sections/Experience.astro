@@ -1,0 +1,220 @@
+---
+import React from '@/icons/react.astro'
+import Section from '../Section.astro'
+
+import { work } from '@cv'
+import Css from '@/icons/css.astro'
+import Node from '@/icons/node.astro'
+import Next from '@/icons/next.astro'
+import Tailwindcss from '@/icons/tailwind.astro'
+import Sass from '@/icons/sass.astro'
+import StyledComponents from '@/icons/styledComponents.astro'
+import Mui from '@/icons/mui.astro'
+import Redux from '@/icons/redux.astro'
+import Expo from '@/icons/expo.astro'
+import Remix from '@/icons/remix.astro'
+
+const SKILLS_ICONS: Record<string, any> = {
+  Css,
+  React,
+  Node,
+  Next,
+  Tailwindcss,
+  Sass,
+  StyledComponents,
+  Mui,
+  Redux,
+  Expo,
+  Remix,
+}
+---
+
+<Section title="Experience">
+  <ul>
+    {
+      work.map(
+        ({
+          name,
+          startDate,
+          endDate,
+          position,
+          summary,
+          modalities,
+          url,
+          technologies,
+        }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3>
+                      <a href={url} title={`Ver ${name}`} target="_blank">
+                        {name}
+                      </a>
+                    </h3>
+                    <div>
+                      <h4>{position}</h4>
+                      <ul class="modalities">
+                        {modalities?.map((modality) => (
+                          <li>{modality}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div>
+                    <time datetime={startDate} data-title={startDate}>
+                      {startDate}
+                    </time>
+                    {' - '}
+                    <time datetime={endDate} data-title={endDate}>
+                      {endDate ?? 'Actual'}
+                    </time>
+                  </div>
+                </header>
+
+                <footer>
+                  <p>{summary}</p>
+                  <ul class="technologies">
+                    {technologies?.map((technology) => (
+                      <li>{technology}</li>
+                    ))}
+                  </ul>
+                </footer>
+              </article>
+            </li>
+          )
+        }
+      )
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .technologies {
+    margin-top: 0.5rem;
+  }
+
+  .modalities,
+  .technologies {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .modalities li,
+  .technologies li {
+    align-items: center;
+    background: #eee;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 500;
+    gap: 4px;
+    padding: 0.2rem 0.6rem;
+  }
+  article h3 {
+    font-weight: 500;
+    color: #111;
+    font-size: larger;
+  }
+
+  article a {
+    color: #111;
+  }
+
+  article a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  article h4 {
+    color: #222;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  time {
+    color: #555;
+    font-size: 0.85rem;
+    min-width: 102px;
+    cursor: default;
+  }
+
+  footer p{
+    text-wrap: balance;
+  }
+
+  [data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease-in-out 0.5s;
+    visibility: visible;
+  }
+
+  [data-title]:after {
+    content: attr(data-title);
+    background-color: #333;
+    color: #fff;
+    font-size: 0.75rem;
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      'Courier New',
+      monospace;
+    position: absolute;
+    padding: 0.2rem 0.5rem;
+    bottom: -1.4rem;
+    left: 50%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 1px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 6px;
+  }
+
+  [data-title] {
+    position: relative;
+  }
+
+  @media (width <= 700px) {
+    time {
+      text-align: right;
+    }
+  }
+
+  @media print {
+    .modalities li,
+    .technologies li {
+      align-items: center;
+      background: #eee;
+      border-radius: 6px;
+      color: black;
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 500;
+      gap: 4px;
+      padding: 0.2rem 0.6rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>

@@ -14,6 +14,9 @@ importers:
       astro:
         specifier: ^4.15.7
         version: 4.15.7(rollup@4.21.3)(typescript@5.6.2)
+      hotkeypad:
+        specifier: 0.1.1
+        version: 0.1.1
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -1002,6 +1005,9 @@ packages:
 
   hastscript@8.0.0:
     resolution: {integrity: sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw==}
+
+  hotkeypad@0.1.1:
+    resolution: {integrity: sha512-v8e9aByI1ReBX30bL/+dHQwsg+UGZaU4WXEWv72DG74h7fSToUm0udXam5tDCns4NsmWLXKzAL3Rjd9FfTjGXw==}
 
   html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
@@ -2962,6 +2968,8 @@ snapshots:
       hast-util-parse-selector: 4.0.0
       property-information: 6.5.0
       space-separated-tokens: 2.0.2
+
+  hotkeypad@0.1.1: {}
 
   html-escaper@3.0.3: {}
 

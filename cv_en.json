@@ -1,0 +1,234 @@
+{
+  "basics": {
+    "name": "Johann Andres Rojas Urrego",
+    "label": "Full Stack Developer with over 5 years of experience",
+    "email": "johann.rojasu@gmail.com",
+    "phone": "+57 3232885701",
+    "summary": "5+ years of experience as a Web and Mobile Developer. Currently working as a Freelancer for the National University of Colombia. Based in Bogotá, Colombia. I have worked in different environments: from accelerating the development of start-ups to leading teams in national companies.",
+    "location": {
+      "address": "",
+      "postalCode": "111911",
+      "city": "Bogotá D.C.",
+      "countryCode": "CO",
+      "region": "Colombia"
+    },
+    "image": "/me.png",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "johannrojas",
+        "url": "https://www.linkedin.com/in/johannrojas/"
+      },
+      {
+        "network": "GitHub",
+        "username": "JhannRo",
+        "url": "https://github.com/JohannRojas"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Hiberus",
+      "position": "Senior Frontend Developer",
+      "modalities": ["Remote"],
+      "startDate": "2024",
+      "endDate": null,
+      "summary": "Development of custom Next.js with app router sites for various Spanish clients using Drupal as a headless CMS, creating component libraries with TailwindCSS and Storybook, and following established guidelines considering accessibility and good content presentation.",
+      "highlights": ["Started the company"],
+      "technologies": ["Next.js", "React.js", "TailwindCSS", "Storybook"]
+    },
+    {
+      "name": "Universidad Nacional de Colombia",
+      "position": "Senior Freelance Frontend Developer",
+      "url": "https://unal.edu.co/",
+      "modalities": ["Remote", "Freelance"],
+      "startDate": "2024",
+      "endDate": "2024",
+      "summary": "Development of the management system for the laboratories of the National University of Colombia. Implementation of microfrontend architecture. Creation of the online substance management platform for the National University of Colombia.",
+      "highlights": ["Started the company"],
+      "technologies": [
+        "React.js",
+        "Remix",
+        "Sass",
+        "Styled Components",
+        "Vite",
+        "React Router",
+        "Typescript",
+        "Storybook"
+      ]
+    },
+    {
+      "name": "Colmena Seguros",
+      "position": "Senior Frontend React.js",
+      "url": "https://afiliacionarl.colmenaseguros.com/",
+      "modalities": ["Hybrid"],
+      "startDate": "2023",
+      "endDate": "2023",
+      "summary": "Led a frontend team by selecting and working with the most suitable technologies and practices for developing an application that allows independent users and SMEs to affiliate to ARL using Next.js with pages router,  create a design system for internal use within the company, including SSR and CSR. Promoted best practices and performance culture improvements, in addition to delivering rapid value to users by allowing them to complete their affiliation in minutes through the platform without intermediaries, distinguishing it from the competition. Also provided the possibility to resume the process regardless of the point at which it was stopped.",
+      "highlights": ["Started the company"],
+      "technologies": ["Next.js", "TailwindCSS", "Redux Toolkit"]
+    },
+    {
+      "name": "Indra Colombia",
+      "position": "Senior FrontEnd Developer",
+      "url": "https://www.youtube.com/watch?v=aSHf60rURsY",
+      "modalities": ["Remote"],
+      "startDate": "2022",
+      "endDate": "2023",
+      "summary": "Within an agile development team, I worked on creating a new module for the prepaid medicine application for the healthcare company Keralty (Sanitas) in conjunction with the Miami team. In addition to implementing a report generation system based on information stored in Firebase and implementing third-party SDKs for scanning patients' vital signs; I worked with native Kotlin and Swift code for Android and iOS. Additionally, I developed a directory of doctors and specialties with the ability to schedule appointments and view the appointment history.",
+      "highlights": ["Started the company"],
+      "technologies": ["React Native", "React.js", "Firebase"]
+    },
+    {
+      "name": "Indra Colombia",
+      "position": "Senior FrontEnd Developer",
+      "url": "https://www.ventanillamovilidad.com.co/",
+      "modalities": ["Remote"],
+      "startDate": "2021",
+      "endDate": "2022",
+      "summary": "Participated in creating the contraventions module for the Single Service Window of the Bogotá Mobility Secretariat, where an online fine contestation system was implemented, a push notification system was created, and a report generation system was developed based on stored information, allowing lawyers to create reports through an online editor using pre-established templates.",
+      "highlights": ["Started the company"],
+      "technologies": [
+        "React.js",
+        "Remix",
+        "Material UI",
+        "Styled Components",
+        "Sass"
+      ]
+    },
+    {
+      "name": "Sophos Solutions",
+      "position": "Associate Consultant",
+      "modalities": ["Remote"],
+      "startDate": "2020",
+      "endDate": "2021",
+      "summary": "Development of an online credit granting system for individuals in minutes through the Tuya financing company's platform, where an online identity validation system was implemented, and a real-time credit scoring system was created. This system was eventually implemented in companies like Alkosto, Ktronix, Exito, among others.",
+      "technologies": ["React.js", "Angular", "Redux", "Sass"]
+    },
+    {
+      "name": "Konrradf SAS",
+      "position": "Frontend Developer",
+      "url": "https://www.konrradf.com",
+      "modalities": ["Remote", "Freelance"],
+      "startDate": "2019",
+      "endDate": "2020",
+      "summary": "Development, maintenance, and improvement of the Konrradf Real Estate company's platform, where the platform for appraisal generation, landing pages, services, among others, was implemented and improved.",
+      "highlights": ["Started the company"],
+      "technologies": ["React.js", "ELM", "Sass", "CSS"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad de Bogotá Jorge Tadeo Lozano",
+      "area": "Systems Engineering"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
+    },
+    {
+      "name": "Sass",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "CSS Framework", "Responsive Design"]
+    },
+    {
+      "name": "Styled Components",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "CSS Framework", "Responsive Design"]
+    },
+    {
+      "name": "Material UI",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "CSS Framework", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Master",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Jest",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "React Testing Library",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Redux toolkit",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Tailwindcss",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "CSS Framework", "Responsive Design"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Backend", "JavaScript Superset"]
+    },
+    {
+      "name": "Node",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
+    },
+    {
+      "name": "Next.js",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "React Native",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Remix",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Advanced"
+    }
+  ]
+}
