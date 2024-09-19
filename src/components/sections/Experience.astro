@@ -67,7 +67,7 @@ const SKILLS_ICONS: Record<string, any> = {
                     <time datetime={startDate} data-title={startDate}>
                       {startDate}
                     </time>
-                    {' - '}
+                    { startDate &&' - '}
                     <time datetime={endDate} data-title={endDate}>
                       {endDate ?? 'Actual'}
                     </time>

@@ -30,8 +30,9 @@
     {
       "name": "Hiberus",
       "position": "Senior Frontend Developer",
+      "url": "https://www.hiberus.com/",
       "modalities": ["Remote"],
-      "startDate": "2024",
+      "startDate": null,
       "endDate": null,
       "summary": "Development of custom Next.js with app router sites for various Spanish clients using Drupal as a headless CMS, creating component libraries with TailwindCSS and Storybook, and following established guidelines considering accessibility and good content presentation.",
       "highlights": ["Started the company"],
