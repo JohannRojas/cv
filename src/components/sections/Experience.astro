@@ -1,32 +1,9 @@
 ---
-import React from '@/icons/react.astro'
 import Section from '../Section.astro'
 
 import { work } from '@cv'
-import Css from '@/icons/css.astro'
-import Node from '@/icons/node.astro'
-import Next from '@/icons/next.astro'
-import Tailwindcss from '@/icons/tailwind.astro'
-import Sass from '@/icons/sass.astro'
-import StyledComponents from '@/icons/styledComponents.astro'
-import Mui from '@/icons/mui.astro'
-import Redux from '@/icons/redux.astro'
-import Expo from '@/icons/expo.astro'
-import Remix from '@/icons/remix.astro'
+import External from '@/icons/External.astro'
 
-const SKILLS_ICONS: Record<string, any> = {
-  Css,
-  React,
-  Node,
-  Next,
-  Tailwindcss,
-  Sass,
-  StyledComponents,
-  Mui,
-  Redux,
-  Expo,
-  Remix,
-}
 ---
 
 <Section title="Experience">
@@ -52,6 +29,7 @@ const SKILLS_ICONS: Record<string, any> = {
                       <a href={url} title={`Ver ${name}`} target="_blank">
                         {name}
                       </a>
+                        <External />
                     </h3>
                     <div>
                       <h4>{position}</h4>
@@ -125,6 +103,8 @@ const SKILLS_ICONS: Record<string, any> = {
     font-weight: 500;
     color: #111;
     font-size: larger;
+    display: flex;
+    gap: 0.25rem;
   }
 
   article a {
@@ -198,6 +178,9 @@ const SKILLS_ICONS: Record<string, any> = {
   @media (width <= 700px) {
     time {
       text-align: right;
+    }
+    h3 a {
+      width: min-content; 
     }
   }
 
