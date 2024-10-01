@@ -29,7 +29,9 @@ import External from '@/icons/External.astro'
                       <a href={url} title={`Ver ${name}`} target="_blank">
                         {name}
                       </a>
+                      <span class="external-icon">
                         <External />
+                      </span>
                     </h3>
                     <div>
                       <h4>{position}</h4>
@@ -105,6 +107,11 @@ import External from '@/icons/External.astro'
     font-size: larger;
     display: flex;
     gap: 0.25rem;
+  }
+  article h3 .external-icon {
+    display: flex;
+    align-items: end;
+    margin-bottom: 2px;
   }
 
   article a {
@@ -198,6 +205,10 @@ import External from '@/icons/External.astro'
       padding: 0.2rem 0.6rem;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+    }
+
+    .external-icon {
+      display: none !important;
     }
   }
 </style>
