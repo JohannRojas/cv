@@ -11,7 +11,6 @@ import Git from '@/icons/git.astro'
 import GitHub from '@/icons/GitHub.astro'
 import Tailwindcss from '@/icons/tailwind.astro'
 import Next from '@/icons/next.astro'
-import { skills } from '@cv'
 import Swift from '@/icons/swift.astro'
 import SwiftUI from '@/icons/swiftui.astro'
 import Kotlin from '@/icons/kotlin.astro'
@@ -23,6 +22,18 @@ import Jest from '@/icons/jest.astro'
 import Redux from '@/icons/redux.astro'
 import Expo from '@/icons/expo.astro'
 import Remix from '@/icons/remix.astro'
+import Zustand from '@/icons/zustand.astro'
+import type { CV } from '@/cv'
+
+interface Props {
+  cv: CV;
+  language?: 'en' | 'es';
+}
+
+const { cv, language = 'en' } = Astro.props;
+const { skills } = cv;
+
+const title = language === 'en' ? 'Skills' : 'Habilidades';
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -47,10 +58,11 @@ const SKILLS_ICONS: Record<string, any> = {
   Redux,
   Expo,
   Remix,
+  Zustand
 }
 ---
 
-<Section title="Skills">
+<Section title={title}>
   <ul>
     {
       skills.map(({ name }) => {
@@ -64,7 +76,7 @@ const SKILLS_ICONS: Record<string, any> = {
                 : name === 'Redux toolkit'
                   ? 'Redux'
                   : name === 'React Native'
-                    ? 'Expo'
+                    ? 'React'
                     : name
         const Icon = SKILLS_ICONS[iconName as keyof typeof SKILLS_ICONS]
 

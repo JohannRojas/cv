@@ -2,8 +2,14 @@
 import 'hotkeypad/reset.css'
 import 'hotkeypad/index.css'
 import { type SocialIcon } from '@/types'
-import { basics } from '@cv'
+import type { CV } from '@/cv'
 
+interface Props {
+  cv: CV;
+}
+
+const { cv } = Astro.props;
+const { basics } = cv;
 const { profiles } = basics
 
 const SOCIAL_ICONS: SocialIcon = {

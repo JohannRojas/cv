@@ -1,5 +1,4 @@
 ---
-import { basics } from '@cv'
 import Section from '@/components/Section.astro'
 import Mail from '@/icons/Mail.astro'
 import Phone from '@/icons/Phone.astro'
@@ -8,7 +7,14 @@ import LinkedIn from '@/icons/LinkedIn.astro'
 import GitHub from '@/icons/GitHub.astro'
 import WorldMap from '@/icons/WorldMap.astro'
 import type { SocialIcon } from '@/types'
+import type { CV } from '@/cv'
 
+interface Props {
+  cv: CV;
+}
+
+const { cv } = Astro.props;
+const { basics } = cv;
 const { name, label, location, profiles, phone, email, image } = basics
 const { city, region } = location
 
@@ -79,9 +85,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
         }
       </footer>
     </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
   </div>
 </Section>
 
@@ -90,7 +93,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
   }
 
@@ -110,14 +113,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
     font-weight: 500;
     font-size: 1.1rem;
     text-wrap: balance;
-  }
-
-  img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    width: 128px;
-    border-radius: 16px;
-    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
   }
 
   span {
@@ -157,7 +152,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
 
   @media (width <= 700px) {
     .container {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
 
     .info {
@@ -165,20 +160,6 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(' • ')
       align-items: center;
       padding-right: 0;
       text-align: center;
-    }
-
-    figure {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h2 {
-      text-wrap: balance;
-    }
-
-    figure {
-      margin: 0 auto;
     }
   }
 </style>

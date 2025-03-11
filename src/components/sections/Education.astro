@@ -1,10 +1,19 @@
 ---
 import Section from '../Section.astro'
+import type { CV } from '@/cv'
 
-import { education } from '@cv'
+interface Props {
+  cv: CV;
+  language?: 'en' | 'es';
+}
+
+const { cv, language = 'en' } = Astro.props;
+const { education } = cv;
+
+const title = language === 'en' ? 'Education' : 'Educación';
 ---
 
-<Section title="Education">
+<Section title={title}>
   <ul>
     {
       education.map(({ institution, area }) => {

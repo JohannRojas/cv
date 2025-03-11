@@ -1,28 +1,30 @@
 export interface CV {
   basics: Basics
   work: Array<Work>
-  volunteer: Array<Volunteer>
+  volunteer?: Array<Volunteer>
   education: Array<Education>
-  awards: Array<Awards>
-  certificates: Array<Certificates>
-  publications: Array<Publications>
+  awards?: Array<Awards>
+  certificates?: Array<Certificates>
+  publications?: Array<Publications>
   skills: Array<Skills>
   languages: Array<Languages>
-  interests: Array<Interests>
-  references: Array<References>
-  projects: Array<Projects>
+  interests?: Array<Interests>
+  references?: Array<References>
+  projects?: Array<Projects>
+  [key: string]: any; 
 }
 
 interface Basics {
   name: string
   label: string
-  image: string
+  image?: string
   email: string
   phone: string
-  url: string
+  url?: string
   summary: string
   location: Location
   profiles: Array<Profiles>
+  [key: string]: any; // Permite propiedades adicionales
 }
 
 interface Location {
@@ -46,7 +48,9 @@ interface Work {
   startDate: DateStr
   endDate: DateStr | null
   summary: string
-  highlights: Highlight
+  highlights?: Highlight
+  modalities?: string[]
+  technologies?: string[]
 }
 
 type DateStr = `${string}-${string}-${string}`

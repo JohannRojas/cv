@@ -10,21 +10,21 @@ import Skills from '@/components/sections/Skills.astro'
 import KeyboardManager from '@/components/KeyboardManager.astro'
 import LanguageSelector from '@/components/LanguageSelector.astro'
 
-// Importamos directamente el archivo cv_en.json
-import cv from '../../cv_en.json'
+// Importamos directamente el archivo cv_es.json en lugar de usar el alias @cv
+import cv from '../../cv_es.json'
 const { basics } = cv
 const { name, label } = basics
 ---
 
-<Layout title={`Portfolio of ${name} - ${label}`} language="en">
+<Layout title={`Portfolio de ${name} - ${label}`} language="es">
   <main>
-    <LanguageSelector currentLanguage="en" />
+    <LanguageSelector currentLanguage="es" />
     <Hero cv={cv} />
-    <About cv={cv} language="en" />
-    <Experience cv={cv} language="en" />
-    <Education cv={cv} language="en" />
-    <Projects cv={cv} language="en" />
-    <Skills cv={cv} language="en" />
+    <About cv={cv} language="es" />
+    <Experience cv={cv} language="es" />
+    <Education cv={cv} language="es" />
+    <Projects cv={cv} language="es" />
+    <Skills cv={cv} language="es" />
   </main>
 
   <KeyboardManager cv={cv} />
@@ -56,4 +56,4 @@ const { name, label } = basics
       display: none;
     }
   }
-</style>
+</style> 

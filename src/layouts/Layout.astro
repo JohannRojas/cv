@@ -1,27 +1,21 @@
 ---
-import { basics } from '@cv'
-
 interface Props {
   title: string
+  language?: 'en' | 'es'
 }
 
-const { title } = Astro.props
-
-const { summary } = basics
+const { title, language = 'en' } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
-    <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/cat.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={summary} />
-    <meta property="og:image" content="" />
   </head>
   <body>
     <slot />

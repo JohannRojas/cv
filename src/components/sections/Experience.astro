@@ -1,12 +1,20 @@
 ---
 import Section from '../Section.astro'
-
-import { work } from '@cv'
 import External from '@/icons/External.astro'
+import type { CV } from '@/cv'
 
+interface Props {
+  cv: CV;
+  language?: 'en' | 'es';
+}
+
+const { cv, language = 'en' } = Astro.props;
+const { work } = cv;
+
+const title = language === 'en' ? 'Experience' : 'Experiencia';
 ---
 
-<Section title="Experience">
+<Section title={title}>
   <ul>
     {
       work.map(
@@ -49,7 +57,7 @@ import External from '@/icons/External.astro'
                     </time>
                     { startDate &&' - '}
                     <time datetime={endDate} data-title={endDate}>
-                      {endDate ?? 'Actual'}
+                      {endDate ?? (language === 'en' ? 'Present' : 'Actual')}
                     </time>
                   </div>
                 </header>

@@ -1,0 +1,50 @@
+---
+interface Props {
+  currentLanguage: 'en' | 'es';
+}
+
+const { currentLanguage } = Astro.props;
+
+const languages = [
+  { code: 'en', name: 'English', url: '/' },
+  { code: 'es', name: 'Español', url: '/es' }
+];
+
+const otherLanguage = languages.find(lang => lang.code !== currentLanguage);
+---
+
+<div class="language-selector">
+  <a href={otherLanguage?.url} class="language-link">
+    {currentLanguage === 'en' ? 'Ver en Español' : 'View in English'}
+  </a>
+</div>
+
+<style>
+  .language-selector {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+  }
+
+  .language-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f3f4f6;
+    color: #374151;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .language-link:hover {
+    background-color: #e5e7eb;
+  }
+
+  @media print {
+    .language-selector {
+      display: none;
+    }
+  }
+</style> 

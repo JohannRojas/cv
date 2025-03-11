@@ -1,11 +1,20 @@
 ---
 import Section from '../Section.astro'
+import type { CV } from '@/cv'
 
-import { basics } from '@cv'
+interface Props {
+  cv: CV;
+  language?: 'en' | 'es';
+}
+
+const { cv, language = 'en' } = Astro.props;
+const { basics } = cv;
 const { summary } = basics
+
+const title = language === 'en' ? 'About me' : 'Sobre mí';
 ---
 
-<Section title="About me">
+<Section title={title}>
   <p>
     {summary}
   </p>
