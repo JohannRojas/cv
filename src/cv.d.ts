@@ -44,16 +44,17 @@ interface Profiles {
 interface Work {
   name: string
   position: string
-  url: string
-  startDate: DateStr
-  endDate: DateStr | null
+  url?: string
+  startDate?: DateStr | string | null
+  endDate?: DateStr | string | null
   summary: string
-  highlights?: Highlight
+  highlights?: Highlight | string[]
   modalities?: string[]
   technologies?: string[]
+  [key: string]: any; // Permite propiedades adicionales
 }
 
-type DateStr = `${string}-${string}-${string}`
+type DateStr = string | `${string}-${string}-${string}`
 
 interface Volunteer {
   organization: string
@@ -67,8 +68,9 @@ interface Volunteer {
 
 interface Skills {
   name: string
-  level: string
-  keywords: Array<string>
+  level?: string
+  keywords?: Array<string>
+  [key: string]: any; // Permite propiedades adicionales
 }
 
 interface Awards {
@@ -95,18 +97,20 @@ interface Publications {
 
 interface Education {
   institution: string
-  url: string
+  url?: string
   area: string
-  studyType: string
-  startDate: DateStr
-  endDate: DateStr
-  score: string
-  courses: Array<string>
+  studyType?: string
+  startDate?: DateStr
+  endDate?: DateStr
+  score?: string
+  courses?: Array<string>
+  [key: string]: any; // Permite propiedades adicionales
 }
 
 interface Languages {
-  language: Language
+  language: Language | string
   fluency: string
+  [key: string]: any; // Permite propiedades adicionales
 }
 
 type Language =
