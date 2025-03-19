@@ -45,8 +45,8 @@ interface Work {
   name: string
   position: string
   url?: string
-  startDate?: DateStr | string | null
-  endDate?: DateStr | string | null
+  startDate?: DateStr
+  endDate?: DateStr
   summary: string
   highlights?: Highlight | string[]
   modalities?: string[]
@@ -54,7 +54,12 @@ interface Work {
   [key: string]: any; // Permite propiedades adicionales
 }
 
-type DateStr = string | `${string}-${string}-${string}`
+type DateStr = 
+  | string 
+  | `${string}-${string}-${string}` 
+  | `${string}-${string}` 
+  | `${number}` // Año solo (ej: "2023")
+  | null
 
 interface Volunteer {
   organization: string

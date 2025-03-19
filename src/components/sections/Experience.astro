@@ -12,6 +12,29 @@ const { cv, language = 'en' } = Astro.props;
 const { work } = cv;
 
 const title = language === 'en' ? 'Experience' : 'Experiencia';
+
+// Función para formatear la fecha según el idioma
+const formatDate = (date: string | null | undefined, lang: string) => {
+  if (!date) return lang === 'en' ? 'Present' : 'Actual';
+  
+  // Si solo es un año, lo devolvemos tal cual
+  if (/^\d{4}$/.test(date)) {
+    return date;
+  }
+  
+  // Si es un formato año-mes, lo formateamos
+  if (/^\d{4}-\d{2}$/.test(date)) {
+    const [year, month] = date.split('-');
+    const monthNames = {
+      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      es: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+    };
+    return `${monthNames[lang as 'en' | 'es'][parseInt(month) - 1]} ${year}`;
+  }
+  
+  // Para otros formatos, devolvemos la fecha tal cual
+  return date;
+};
 ---
 
 <Section title={title}>
@@ -34,12 +57,18 @@ const title = language === 'en' ? 'Experience' : 'Experiencia';
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
-                      </a>
-                      <span class="external-icon">
-                        <External />
-                      </span>
+                      {url ? (
+                        <a href={url} title={`Ver ${name}`} target="_blank">
+                          {name}
+                        </a>
+                      ) : (
+                        <span>{name}</span>
+                      )}
+                      {url && (
+                        <span class="external-icon">
+                          <External />
+                        </span>
+                      )}
                     </h3>
                     <div>
                       <h4>{position}</h4>
@@ -52,12 +81,12 @@ const title = language === 'en' ? 'Experience' : 'Experiencia';
                   </div>
 
                   <div>
-                    <time datetime={startDate} data-title={startDate}>
-                      {startDate}
+                    <time datetime={startDate?.toString()} data-title={startDate?.toString()}>
+                      {formatDate(startDate?.toString(), language)}
                     </time>
-                    { startDate &&' - '}
-                    <time datetime={endDate} data-title={endDate}>
-                      {endDate ?? (language === 'en' ? 'Present' : 'Actual')}
+                    {startDate && ' - '}
+                    <time datetime={endDate?.toString()} data-title={endDate?.toString()}>
+                      {formatDate(endDate?.toString(), language)}
                     </time>
                   </div>
                 </header>
